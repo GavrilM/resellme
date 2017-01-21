@@ -1,4 +1,7 @@
-import { book, game, diamond, sold} from './lib/images'
+import book from './lib/puffin.jpg'
+import game from './lib/meteor.png'
+import diamond from './lib/game.png'
+import sale from './lib/nuke.png'
 
 export default [
   {
@@ -31,7 +34,7 @@ export default [
   {
     "name" : "A sold item",
     "cost" : 25,
-    "img" : sold,
+    "img" : sale,
     "condition" : "Old",
     "state" : "Sold",
     "about" : "This is a long description of a sold item that really doesn't have any content; its just a long sentence that doesn't have any meaningful content that you should read and just keeps going on and on, to the point htat you want to stop reading it and you just get tired, and yet it still keeps going.",

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-const cellHeight = 50
+const cellHeight = 100
 
 export default StyleSheet.create({
   stretch: {
@@ -13,19 +13,31 @@ export default StyleSheet.create({
     paddingRight: 25,
   },
   image: {
-    width: cellHeight - 10,
-    // borderColor: 'black',
-    // borderWidth: 2,
-    // padding: 20,
-    // backgroundColor: 'black',
-    borderRadius: 50
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: cellHeight - 30,
+    // maxWidth: 60,
+    maxHeight: 80,
+    // // borderColor: 'black',
+    // // borderWidth: 2,
+    // // padding: 20,
+    // // backgroundColor: 'black',
+    // borderRadius: 50
   },
   text:{
     textAlign:'center',
     height: 30,
   },
+  price: {
+    fontWeight: '600'
+  },
   indicator: {
     borderColor: 'orange',
     borderWidth: 2,
+  },
+  centered: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })

@@ -29,7 +29,7 @@ export default class ProductList extends Component{
     return <ListView
       dataSource={this.state.dataSource}
       renderRow={this.renderRow}
-      renderSeparator={ (sectionId, rowId) => <View key={rowId} style={Styles.separator} />}
+      // renderSeparator={ (sectionId, rowId) => <View key={rowId} style={Styles.separator} />}
     />
   }
 }
