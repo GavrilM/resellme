@@ -1,15 +1,8 @@
 import React, {Component} from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Image } from 'react-native'
 
 import Styles from './styles'
 
-export default class ProductDetail extends Component{
-  constructor(props){
-    super(props)
-    this.state = {}
-  }
-
-  render(){
-    return <View style={Styles.main}><Text>{this.props.innerText}</Text></View>
-  }
+export default (props) => {
+    return <View style={Styles.main}><Text>{props.innerText}</Text></View>
 }

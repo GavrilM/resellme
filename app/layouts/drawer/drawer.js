@@ -13,7 +13,7 @@ export default class DrawerLayout extends Component{
 
   renderScene(route, nav){
     switch(route.title){
-      case 'Master': return <Home navigator={nav}/>
+      case 'Master': return <Home navigator={nav} data={this.props.data}/>
       case "Detail": return <ProductDetail innerText={route.text} navigator={nav}/>
       default: return <Text>Failed.</Text>
     }

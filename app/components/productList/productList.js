@@ -8,7 +8,7 @@ export default class ProductList extends Component{
   constructor(props){
     super(props)
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    const src =['row 1', 'row 2', 'row 3', 'row 4', 'row infinity']
+    const src =this.props.data
     this.state = {
       src,
       dataSource: ds.cloneWithRows(src),
@@ -16,7 +16,7 @@ export default class ProductList extends Component{
     this.renderRow = this.renderRow.bind(this)
   }
   didSelectRow(i,row){
-    this.props.navigateTo({title: 'Detail', text:row, index: i+1})
+    this.props.navigateTo({title: 'Detail', text:row.name, index: i+1})
   }
   renderRow(rowData, sectionID, rowID, highlightRow) {
     return   <ProductItem

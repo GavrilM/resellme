@@ -7,12 +7,15 @@ import {
   View
 } from 'react-native';
 
-import DrawerNav from './layouts/drawer'
+import DrawerNav from './layouts/material'
+
+import Data from './dummy'
+
 export default class resellme extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <DrawerNav />
+        <DrawerNav data={Data}/>
       </View>
 
     );
