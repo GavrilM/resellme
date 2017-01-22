@@ -13,7 +13,7 @@ export default (props) => {
             <View style={Styles.details}>
               <View style={Styles.detailLeft}>
                 <Text style={Styles.productName}>{props.item.name}</Text>
-                <Text style={Styles.condition}>{props.item.condition}</Text>
+                <Text style={Styles.condition}>Condition: {props.item.condition}</Text>
               </View>
               <View style={Styles.detailRight}>
                 <Button raised primary text={"$"+props.item.cost} style={{ container:{ width:100 }}}/>

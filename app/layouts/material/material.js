@@ -3,6 +3,7 @@ import { Text, View, Navigator, TouchableOpacity, DrawerLayoutAndroid, NativeMod
 
 import { COLOR, ThemeProvider, Toolbar, Drawer } from 'react-native-material-ui';
 
+import Filter from '../../components/filter'
 import Home from '../../routes/home'
 import Product from '../../routes/product'
 
@@ -34,11 +35,15 @@ export default class MaterialLayout extends Component{
       navigator: nav
     }
 
+    let content;
+
     switch(route.title){
-      case 'Master': return <Home navigator={nav} data={this.props.data} {...props} />
-      case "Detail": return <Product item={route.item} {...props} />
-      default: return <Text>Failed.</Text>
+      case 'Master': content = <Home navigator={nav} data={this.props.data} {...props} />; break;
+      case "Detail": content =  <Product item={route.item} {...props} />; break;
+      default: content = <Text>Failed.</Text>; break;
     }
+
+    return <Filter content={content}/>
   }
 
   render(){
