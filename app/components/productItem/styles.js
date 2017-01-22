@@ -19,10 +19,10 @@ export default StyleSheet.create({
     width: cellHeight - 30,
     // maxWidth: 60,
     maxHeight: 80,
-    // // borderColor: 'black',
-    // // borderWidth: 2,
-    // // padding: 20,
-    // // backgroundColor: 'black',
+    // borderColor: 'black',
+    // borderWidth: 2,
+    // padding: 20,
+    // backgroundColor: 'black',
     // borderRadius: 50
   },
   text:{

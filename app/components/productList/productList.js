@@ -16,7 +16,7 @@ export default class ProductList extends Component{
     this.renderRow = this.renderRow.bind(this)
   }
   didSelectRow(i,row){
-    this.props.navigateTo({title: 'Detail', text:row.name, index: i+1})
+    this.props.navigateTo({title: 'Detail', item:row, index: 1})
   }
   renderRow(rowData, sectionID, rowID, highlightRow) {
     return   <ProductItem

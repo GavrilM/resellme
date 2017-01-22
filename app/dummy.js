@@ -23,7 +23,7 @@ export default [
     "user" : "Dummy User"
   },
   {
-    "name" : "An expensive item",
+    "name" : "An expensive item with a stupidly long name",
     "cost" : 600,
     "img" : diamond,
     "condition" : "Newly Stolen",

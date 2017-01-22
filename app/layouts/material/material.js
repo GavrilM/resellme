@@ -32,7 +32,7 @@ export default class MaterialLayout extends Component{
   renderScene(route, nav){
     switch(route.title){
       case 'Master': return <Home navigator={nav} data={this.props.data} toggleDrawer={() => this.toggleDrawer()}/>
-      case "Detail": return <ProductDetail innerText={route.text} navigator={nav}/>
+      case "Detail": return <ProductDetail item={route.item} navigator={nav}/>
       default: return <Text>Failed.</Text>
     }
   }
