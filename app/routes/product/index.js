@@ -1,1 +1,1 @@
-ECHO is on.
+export {default} from './Product'

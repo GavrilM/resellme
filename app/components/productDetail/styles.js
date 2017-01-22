@@ -2,11 +2,8 @@ import { StyleSheet, Dimensions } from 'react-native'
 
 export default StyleSheet.create({
   main: {
-    height: Dimensions.get('window').height,
+    flex:1,
     backgroundColor: 'white',
-    borderColor: 'red',
-    borderWidth: 2,
-
   },
   image: {
     height: 300,
@@ -38,8 +35,8 @@ export default StyleSheet.create({
     fontSize: 24
   },
   line: {
-    width:Dimensions.get('window').width-40,
-    height:2,
+    width: 5000,
+    height:1,
     backgroundColor: 'grey',
     marginLeft: 20,
     marginTop:10

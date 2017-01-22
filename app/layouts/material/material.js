@@ -4,9 +4,8 @@ import { Text, View, Navigator, TouchableOpacity, DrawerLayoutAndroid, NativeMod
 import { COLOR, ThemeProvider, Toolbar, Drawer } from 'react-native-material-ui';
 
 import Home from '../../routes/home'
-import ProductDetail from '../../components/productDetail'
+import Product from '../../routes/product'
 
-import NavBar from './navbar'
 import Styles from './styles'
 
 const uiTheme = {
@@ -30,9 +29,14 @@ export default class MaterialLayout extends Component{
   }
 
   renderScene(route, nav){
+    const props = {
+      toggleDrawer: () => this.refs.drawer.openDrawer(),
+      navigator: nav
+    }
+
     switch(route.title){
-      case 'Master': return <Home navigator={nav} data={this.props.data} toggleDrawer={() => this.toggleDrawer()}/>
-      case "Detail": return <ProductDetail item={route.item} navigator={nav}/>
+      case 'Master': return <Home navigator={nav} data={this.props.data} {...props} />
+      case "Detail": return <Product item={route.item} {...props} />
       default: return <Text>Failed.</Text>
     }
   }
@@ -66,10 +70,10 @@ export default class MaterialLayout extends Component{
             drawerPosition={DrawerLayoutAndroid.positions.Left}
             renderNavigationView = {() => navigationView}>
               <Navigator
-              initialRoute={{title:'Master', index:0}}
-              renderScene={(r,n) => this.renderScene(r,n)}
-              sceneStyle={Styles.scene}
-              navigationBar={ <NavBar openDrawer={() => this.refs.drawer.openDrawer()}/> }
+                configureScene={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid}
+                initialRoute={{title:'Master', index:0}}
+                renderScene={(r,n) => this.renderScene(r,n)}
+                sceneStyle={Styles.scene}
             />
           </DrawerLayoutAndroid>
         </ThemeProvider>)

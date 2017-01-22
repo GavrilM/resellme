@@ -7,6 +7,6 @@ export default StyleSheet.create({
     height: navBarHeight,
   },
   scene: {
-    paddingTop: navBarHeight
+    flex:1,
   }
 })

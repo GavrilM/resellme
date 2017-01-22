@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import { Drawer, Toolbar, Container } from "react-native-material-ui"
+import { Toolbar } from "react-native-material-ui"
 
 import Styles from './styles'
 
+import NavBar from '../../components/navbar'
 import ProductList from '../../components/productList'
 
 export default class Home extends Component{
@@ -22,9 +23,14 @@ export default class Home extends Component{
   }
 
   render() {
-    return <ProductList
-              navigateTo = {(o) => this.navigate(o)}
-              data={this.props.data}
-            />
+    return (<View>
+      <NavBar title='Home' initial={true} navigator={this.props.navigator} openDrawer={() => this.props.toggleDrawer()}/>
+      <View style={{marginTop: 50}}>
+        <ProductList
+          navigateTo = {(o) => this.navigate(o)}
+          data={this.props.data}
+        />
+      </View>
+    </View>)
   }
 }

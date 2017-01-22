@@ -5,7 +5,8 @@ import { Button } from 'react-native-material-ui'
 import Styles from './styles'
 
 export default (props) => {
-    return <ScrollView style={Styles.main}>
+    const width = Dimensions.get('window').width-40;
+    return <View style={Styles.main}>
             <View style={Styles.imageContainer}>
               <Image source={props.item.img} style={Styles.image} resizeMode='contain'/>
             </View>
@@ -19,5 +20,5 @@ export default (props) => {
               </View>
             </View>
             <View style={Styles.line} />
-          </ScrollView>
+          </View>
 }
