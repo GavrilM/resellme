@@ -35,7 +35,7 @@ export default [
     "name" : "A sold item",
     "cost" : 25,
     "img" : sale,
-    "condition" : "Old",
+    "condition" : "Well Worn",
     "state" : "Sold",
     "about" : "This is a long description of a sold item that really doesn't have any content; its just a long sentence that doesn't have any meaningful content that you should read and just keeps going on and on, to the point htat you want to stop reading it and you just get tired, and yet it still keeps going.",
     "user" : "Dummy User"

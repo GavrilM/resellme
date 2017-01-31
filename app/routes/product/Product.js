@@ -22,7 +22,7 @@ export default class ProductList extends Component{
               <Subheader text="Seller Info" />
               <View style={{height: 70, alignItems:'center', justifyContent: 'space-around'}}>
                 <Text style={{fontWeight:'700', fontSize:20}}>{this.props.item.user}</Text>
-                <Button primary text="Contact"/>
+                <Button primary text="Contact" onPress={() => this.props.filterData()}/>
               </View>
             </ScrollView>
           </View>

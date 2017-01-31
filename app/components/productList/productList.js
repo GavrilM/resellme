@@ -8,15 +8,23 @@ export default class ProductList extends Component{
   constructor(props){
     super(props)
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    const src =this.props.data
+    const src =this.props.data;
     this.state = {
       src,
       dataSource: ds.cloneWithRows(src),
     };
     this.renderRow = this.renderRow.bind(this)
   }
+  componentWillReceiveProps(props){
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const src =props.data
+    this.setState({
+      src,
+      dataSource: ds.cloneWithRows(src),
+    });
+  }
   didSelectRow(i,row){
-    this.props.navigateTo({title: 'Detail', item:row, index: 1})
+    this.props.navigateTo({title: 'Product', item:row, index: 1})
   }
   renderRow(rowData, sectionID, rowID, highlightRow) {
     return   <ProductItem

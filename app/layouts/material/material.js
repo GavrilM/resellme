@@ -38,12 +38,12 @@ export default class MaterialLayout extends Component{
     let content;
 
     switch(route.title){
-      case 'Master': content = <Home navigator={nav} data={this.props.data} {...props} />; break;
-      case "Detail": content =  <Product item={route.item} {...props} />; break;
+      case 'Home': content = Home; break;
+      case "Product": content = Product; props.item = route.item; break;
       default: content = <Text>Failed.</Text>; break;
     }
 
-    return <Filter content={content}/>
+    return <Filter data={this.props.data} content={content} passedProps={props} />
   }
 
   render(){
@@ -76,7 +76,7 @@ export default class MaterialLayout extends Component{
             renderNavigationView = {() => navigationView}>
               <Navigator
                 configureScene={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid}
-                initialRoute={{title:'Master', index:0}}
+                initialRoute={{title:'Home', index:0}}
                 renderScene={(r,n) => this.renderScene(r,n)}
                 sceneStyle={Styles.scene}
             />

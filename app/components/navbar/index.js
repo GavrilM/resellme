@@ -5,6 +5,7 @@ import { Toolbar } from 'react-native-material-ui';
 export default class NavBar extends Component{
   constructor(props){
     super(props)
+    this.state= {}
   }
 
   render(){
@@ -28,6 +29,16 @@ export default class NavBar extends Component{
           leftElement= "menu"
           onLeftElementPress={() => this.props.openDrawer()}
           { ...props }
+          searchable={{
+              autoFocus: true,
+              placeholder: 'Search',
+              onChangeText: value => this.props.submitSearch(value),
+              onSearchClosed: () => this.props.submitSearch(''),
+          }}
+          rightElement={{
+              actions: ['edit'],
+          }}
+          onRightElementPress={() => this.props.openFilter()}
         />
   }
 }
