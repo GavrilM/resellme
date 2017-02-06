@@ -1,1 +1,5 @@
-ECHO is on.
+import { StyleSheet } from 'react-native'
+
+export default StyleSheet.create({
+  
+})

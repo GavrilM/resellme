@@ -10,15 +10,15 @@ import ProductList from '../../components/productList'
 export default class Home extends Component{
   constructor(props) {
     super(props)
-    this.state= {}
+    this.state= {filterOpen: false}
   }
 
   navigate(data){
     this.props.navigator.push(data)
   }
 
-  toggleFilter(bool){
-    this.setState({filterOpen: bool})
+  toggleFilter(){
+    this.setState({filterOpen: !this.state.filterOpen})
   }
 
   render() {
@@ -30,7 +30,7 @@ export default class Home extends Component{
       openDrawer: () => this.props.toggleDrawer()
     }
 
-    return (<View>
+    return (<View style={{flex:1}}>
       <FilterBar 
         filterData={(o) => this.props.filterData(o)}
         toggleFilter={t => this.toggleFilter(t)}
@@ -39,10 +39,11 @@ export default class Home extends Component{
         <ProductList
           navigateTo = {(o) => this.navigate(o)}
           data={this.props.data}
+          firebase={this.props.firebase} 
         />
       </View>
       <ActionButton
-        icon="share"
+        icon="add"
         onPress={() => this.navigate({title: 'Add New'})}
       />
     </View>)

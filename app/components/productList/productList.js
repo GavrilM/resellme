@@ -31,10 +31,12 @@ export default class ProductList extends Component{
                 key={rowData}
                 item={rowData}
                 clicked={() => this.didSelectRow(rowID, rowData)}
+                firebase={this.props.firebase}
               />
   }
   render() {
     return <ListView
+      enableEmptySections={true}
       dataSource={this.state.dataSource}
       renderRow={this.renderRow}
       // renderSeparator={ (sectionId, rowId) => <View key={rowId} style={Styles.separator} />}

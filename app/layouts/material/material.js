@@ -6,6 +6,7 @@ import { COLOR, ThemeProvider, Toolbar, Drawer } from 'react-native-material-ui'
 import Filter from '../../components/filter'
 import Home from '../../routes/home'
 import Product from '../../routes/product'
+import Create from '../../routes/createProduct'
 
 import Styles from './styles'
 
@@ -37,13 +38,16 @@ export default class MaterialLayout extends Component{
 
     let content;
 
+
+
     switch(route.title){
       case 'Home': content = Home; break;
       case "Product": content = Product; props.item = route.item; break;
+      case 'Add New': return <Create firebase={this.props.firebase} {...props} />;
       default: content = <Text>Failed.</Text>; break;
     }
 
-    return <Filter data={this.props.data} content={content} passedProps={props} />
+    return <Filter firebase={this.props.firebase} content={content} passedProps={props} />
   }
 
   render(){
